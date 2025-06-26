@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+    <main class="container">
+
+        <section class="form-sec">
+            <h2>Resume Builder</h2>
+            <form id="resume-form">
+
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" placeholder="Enter your Full Name">
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" placeholder="Enter your Email Address">
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" placeholder="Enter your Phone Number">
+
+                <label for="summary">Profile Summary:</label>
+                <textarea id="summary" placeholder="Write a brief summary about you"></textarea>
+
+                <h3>Education</h3>
+                <div id="education">
+                    <input type="text" placeholder="e.g., B.Sc. in Computer Science from ABC University">
+                </div>
+                <button type="button" onclick="addEducation()">+ Add Education</button>
+
+                <h3>Skills</h3>
+                <div id="skill">
+                    <input type="text" placeholder="e.g., HTML, CSS, JavaScript, Java">
+                </div>
+                <button type="button" onclick="addSkill()">+ Add Skill</button>
+
+                <h3>Experience</h3>
+                <div id="experience">
+                    <input type="text" placeholder="e.g., Web Developer at ABC Corp (2022-2025)">
+                </div>
+                <button type="button" onclick="addExperience()">+ Add Experience</button>
+
+                <button type="button" id="clear-btn">Clear Form</button>
+                <button type="button" id="download-pdf-btn">Download as PDF</button>
+
+            </form>
+        </section>
+
+        <section class="prev-sec">
+            <h2>Resume Preview</h2>
+            <div id="resume-prev">
+                <h1 id="prev-name">Full Name</h1>
+                <p id="prev-contact">Email | Phone</p>
+
+                <h3>Profile Summary</h3>
+                <p id="prev-summary">Summary</p>
+
+                <h3>Education</h3>
+                <ul id="prev-education"></ul>
+
+                <h3>Skills</h3>
+                <ul id="prev-skills"></ul>
+
+                <h3>Experience</h3>
+                <ul id="prev-experience"></ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
