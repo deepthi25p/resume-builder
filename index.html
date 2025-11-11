@@ -1,77 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume Builder</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATS-Friendly Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-    <main class="container">
+  <header>
+    <h1>ATS-Friendly Resume Builder</h1>
+    <p>Create a professional, machine-readable resume with ease</p>
+  </header>
 
-        <section class="form-sec">
-            <h2>Resume Builder</h2>
-            <form id="resume-form">
+  <main class="container">
+  
+    <section class="form-sec">
+      <form id="resume-form">
+        <h2>Personal Information</h2>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="John Doe">
 
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" placeholder="Enter your Full Name">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="john.doe@example.com">
 
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" placeholder="Enter your Email Address">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="+1 123 456 7890">
 
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" placeholder="Enter your Phone Number">
+        <label for="summary">Professional Summary</label>
+        <textarea id="summary" placeholder="Write a brief, impactful summary..."></textarea>
 
-                <label for="summary">Profile Summary:</label>
-                <textarea id="summary" placeholder="Write a brief summary about you"></textarea>
+        <h2>Education</h2>
+        <div id="education">
+          <input type="text" placeholder="e.g., B.Sc. in Computer Science, ABC University, 2020">
+        </div>
+        <button type="button" class="add-btn" onclick="addEducation()">+ Add Education</button>
 
-                <h3>Education</h3>
-                <div id="education">
-                    <input type="text" placeholder="e.g., B.Sc. in Computer Science from ABC University">
-                </div>
-                <button type="button" onclick="addEducation()">+ Add Education</button>
+        <h2>Skills</h2>
+        <div id="skill">
+          <input type="text" placeholder="e.g., HTML, CSS, JavaScript">
+        </div>
+        <button type="button" class="add-btn" onclick="addSkill()">+ Add Skill</button>
 
-                <h3>Skills</h3>
-                <div id="skill">
-                    <input type="text" placeholder="e.g., HTML, CSS, JavaScript, Java">
-                </div>
-                <button type="button" onclick="addSkill()">+ Add Skill</button>
+        <h2>Experience</h2>
+        <div id="experience">
+          <input type="text" placeholder="e.g., Frontend Developer, XYZ Corp, 2021-Present">
+        </div>
+        <button type="button" class="add-btn" onclick="addExperience()">+ Add Experience</button>
 
-                <h3>Experience</h3>
-                <div id="experience">
-                    <input type="text" placeholder="e.g., Web Developer at ABC Corp (2022-2025)">
-                </div>
-                <button type="button" onclick="addExperience()">+ Add Experience</button>
+        <div class="btn-group">
+          <button type="button" id="clear-btn">Clear Form</button>
+          <button type="button" id="download-pdf-btn">Download Resume (PDF)</button>
+        </div>
+      </form>
+    </section>
 
-                <button type="button" id="clear-btn">Clear Form</button>
-                <button type="button" id="download-pdf-btn">Download as PDF</button>
+    <section class="prev-sec">
+      <h2>Live Preview</h2>
+      <div id="resume-prev" class="resume-preview">
+        <header>
+          <h1 id="prev-name">John Doe</h1>
+          <p id="prev-contact">john.doe@example.com | +1 123 456 7890</p>
+        </header>
 
-            </form>
+        <section>
+          <h3>Professional Summary</h3>
+          <p id="prev-summary">A short professional summary will appear here.</p>
         </section>
 
-        <section class="prev-sec">
-            <h2>Resume Preview</h2>
-            <div id="resume-prev">
-                <h1 id="prev-name">Full Name</h1>
-                <p id="prev-contact">Email | Phone</p>
-
-                <h3>Profile Summary</h3>
-                <p id="prev-summary">Summary</p>
-
-                <h3>Education</h3>
-                <ul id="prev-education"></ul>
-
-                <h3>Skills</h3>
-                <ul id="prev-skills"></ul>
-
-                <h3>Experience</h3>
-                <ul id="prev-experience"></ul>
-            </div>
+        <section>
+          <h3>Education</h3>
+          <ul id="prev-education"></ul>
         </section>
-    </main>
 
-    <script src="script.js"></script>
+        <section>
+          <h3>Skills</h3>
+          <ul id="prev-skills"></ul>
+        </section>
+
+        <section>
+          <h3>Experience</h3>
+          <ul id="prev-experience"></ul>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Resume Builder | Built with ❤️ using HTML, CSS & JS</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
