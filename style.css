@@ -6,150 +6,208 @@
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #f7e1ff, #d9f9f2);
-  color: #222;
-  line-height: 1.6;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: #f4f6f8;
+  color: #2f2f2f;
   padding: 20px;
 }
 
 
-header, footer {
+header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 header h1 {
-  color: #5a056c;
   font-size: 2rem;
-  margin-bottom: 10px;
+  color: #00509e;
+  margin-bottom: 5px;
 }
 
-footer {
-  margin-top: 40px;
-  font-size: 14px;
+header p {
+  font-size: 1rem;
   color: #555;
 }
 
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #777;
+  font-size: 14px;
+}
 
 .container {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
 }
 
-.form-sec, .prev-sec {
-  flex: 1 1 500px;
-  background: #fff;
+.form-sec,
+.prev-sec {
+  flex: 1 1 480px;
+  background: #ffffff;
   padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.form-sec:hover,
+.prev-sec:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+  color: #003865;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #d0e3ff;
+  padding-bottom: 5px;
 }
 
 label {
-  font-weight: 600;
-  margin-top: 15px;
   display: block;
+  margin-top: 15px;
+  font-weight: 600;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
-  padding: 10px;
-  border: 1.5px solid #ccc;
-  border-radius: 6px;
-  margin-top: 6px;
+  padding: 10px 12px;
+  border: 1.5px solid #cfd8e3;
+  border-radius: 8px;
   font-size: 15px;
-  transition: border 0.3s;
+  margin-top: 6px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fafbfc;
 }
 
-input:focus, textarea:focus {
-  border-color: #7e0fa8;
+input:focus,
+textarea:focus {
+  border-color: #0077c8;
+  box-shadow: 0 0 0 3px rgba(0, 119, 200, 0.2);
   outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
 }
 
 .add-btn {
   margin-top: 10px;
-  background-color: #9c27b0;
+  background-color: #0077c8;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  padding: 8px 12px;
-  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 6px;
   font-size: 14px;
-  transition: 0.3s;
 }
 
 .add-btn:hover {
-  background-color: #6b187d;
-  transform: scale(1.05);
+  background-color: #005fa3;
+  transform: scale(1.03);
 }
 
 .btn-group {
   display: flex;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
-#clear-btn, #download-pdf-btn {
+#clear-btn,
+#download-pdf-btn {
   flex: 1;
-  background-color: #6b1b7b;
-  color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 12px;
+  font-size: 15px;
   font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
-#clear-btn:hover, #download-pdf-btn:hover {
-  background-color: #4a015b;
+#clear-btn {
+  background-color: #dae4ed;
+  color: #003865;
+}
+
+#clear-btn:hover {
+  background-color: #c7d9ea;
+}
+
+#download-pdf-btn {
+  background-color: #0077c8;
+  color: #fff;
+}
+
+#download-pdf-btn:hover {
+  background-color: #005fa3;
 }
 
 
 .resume-preview {
-  border: 1px solid #ddd;
   padding: 20px;
-  background: #fafafa;
-  border-radius: 6px;
+  border: 1.5px solid #e1e8f0;
+  border-radius: 8px;
+  background-color: #fefefe;
 }
 
 .resume-preview h1 {
-  font-size: 24px;
-  color: #4b015c;
+  color: #002b55;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.resume-preview p {
+  color: #555;
+  font-size: 14px;
 }
 
 .resume-preview h3 {
-  margin-top: 15px;
-  color: #4b015c;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 3px;
-  font-size: 18px;
+  color: #003865;
+  margin-top: 20px;
+  border-bottom: 2px solid #e3ecf5;
+  padding-bottom: 4px;
+  font-size: 17px;
 }
 
 .resume-preview ul {
   padding-left: 20px;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .resume-preview li {
-  list-style: square;
-  margin-bottom: 5px;
-  animation: fadeIn 0.4s ease;
+  list-style-type: disc;
+  margin-bottom: 6px;
+  animation: fadeIn 0.3s ease-in;
+  color: #333;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
 
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    align-items: center;
   }
-  header h1 {
-    font-size: 1.5rem;
+  h2 {
+    font-size: 18px;
   }
 }
